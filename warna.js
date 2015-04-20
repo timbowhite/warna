@@ -310,6 +310,8 @@
 	 */
 	function Gradient(begin, end) {
 
+        if (! begin || ! end) return this;
+
 		// Parse color parameter
 		begin = warna.parse(begin);
 		end = warna.parse(end);
@@ -342,7 +344,7 @@
 		var gradient = this.gradient;
 
 		// Check gradient color
-		if (!gradient.begin || !gradient.end) {
+		if (! gradient || !gradient.begin || !gradient.end) {
 			throw Error('Gradient color is not defined.');
 		}
 
